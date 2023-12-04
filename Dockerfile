@@ -9,3 +9,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
      && apt-get -y install --no-install-recommends lrzip python3-pip
 
 RUN pip install huggingface_hub
+RUN mkdir /tmp/hfcache
+RUN export TRANSFORMERS_CACHE=/tmp/hfcache/
+RUN script screen.log
